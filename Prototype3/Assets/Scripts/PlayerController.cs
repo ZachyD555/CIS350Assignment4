@@ -16,7 +16,8 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // Modify gravity
-        Physics.gravity *= gravityModifier;
+        if (Physics.gravity.y > -10)
+            Physics.gravity *= gravityModifier;
 
         // Set the force mode
         jumpForceMode = ForceMode.Impulse;
@@ -34,11 +35,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // 
+        // Let the player jump when they're back on the ground
         if (collision.gameObject.CompareTag("Ground"))
             isOnGround = true;
 
-        // 
+        // Make gameOver == true when player hits an obstacle
         else if (collision.gameObject.CompareTag("Obstacle") && !gameOver)
         {
             Debug.Log("Game Over!");
