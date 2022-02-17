@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Assignment 4
+ * Loops background
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,8 +26,6 @@ public class RepeatBackground : MonoBehaviour
     {
         // If the background is further left than repeatWidth, reset to startPos
         if (transform.position.x < startPos.x - repeatWidth)
-        {
             transform.position = startPos;
-        }
     }
 }

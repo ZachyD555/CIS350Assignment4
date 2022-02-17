@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Assignment 4
+ * Makes obstacles move left destroys them when they leave the screen
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +14,7 @@ public class MoveLeft : MonoBehaviour
     private PlayerController playerControllerScript;
 
     void Start()
-    {
+    { 
         playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 

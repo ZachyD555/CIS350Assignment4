@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Assignment 4
+ * Triggers obstacle and adds one to player score
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

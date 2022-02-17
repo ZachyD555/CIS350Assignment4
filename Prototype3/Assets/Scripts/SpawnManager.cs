@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Assignment 4
+ * Controls obstacle spawning
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
