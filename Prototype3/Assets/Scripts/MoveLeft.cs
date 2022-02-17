@@ -15,11 +15,12 @@ public class MoveLeft : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(Vector3.left * Time.deltaTime * speed);
+        // Stop moving the background when gameOver == true
+        if (playerControllerScript.gameOver == false)
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
 
+        // Destroy obstacles upon leaving screen
         if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
-        {
             Destroy(gameObject);
-        }
     }
 }
