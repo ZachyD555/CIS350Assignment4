@@ -1,11 +1,16 @@
-﻿using System.Collections;
+﻿/*
+ * Zach Daly
+ * Assignment 4
+ * Spawns money and obstacles
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManagerX : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-    private float spawnDelay = 2;
+    private float spawnDelay = 2.0f;
     private float spawnInterval = 1.5f;
 
     private PlayerControllerX playerControllerScript;
@@ -13,22 +18,19 @@ public class SpawnManagerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("PrawnsObject", spawnDelay, spawnInterval);
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerX>();
+        InvokeRepeating("SpawnObjects", spawnDelay, spawnInterval);
+        playerControllerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControllerX>();
     }
 
     // Spawn obstacles
     void SpawnObjects ()
     {
         // Set random spawn location and random object index
-        Vector3 spawnLocation = new Vector3(30, Random.Range(5, 15), 0);
+        Vector3 spawnLocation = new Vector3(30, Random.Range(2, 14), 0);
         int index = Random.Range(0, objectPrefabs.Length);
 
         // If game is still active, spawn new object
         if (!playerControllerScript.gameOver)
-        {
             Instantiate(objectPrefabs[index], spawnLocation, objectPrefabs[index].transform.rotation);
-        }
-
     }
 }
