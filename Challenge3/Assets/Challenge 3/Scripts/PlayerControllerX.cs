@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach to player
 public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver;
@@ -14,9 +15,7 @@ public class PlayerControllerX : MonoBehaviour
     public float floatForce, maxHeight = 15.0f;
     private float gravityModifier = 1.5f;
     private Rigidbody playerRb;
-
     public ParticleSystem explosionParticle, fireworksParticle;
-
     private AudioSource playerAudio;
     public AudioClip moneySound, explodeSound;
 
@@ -43,9 +42,7 @@ public class PlayerControllerX : MonoBehaviour
     {
         // While space is pressed and player is low enough, float up
         if (Input.GetKeyDown(KeyCode.Space) && !gameOver && transform.position.y < maxHeight)
-        {
             playerRb.AddForce(Vector3.up * floatForce, forceMode);
-        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -69,8 +66,6 @@ public class PlayerControllerX : MonoBehaviour
 
         // If player hits floor, push back up
         else if (other.gameObject.CompareTag("Ground"))
-        {
             playerRb.AddForce(Vector3.up * floatForce, forceMode);
-        }
     }
 }

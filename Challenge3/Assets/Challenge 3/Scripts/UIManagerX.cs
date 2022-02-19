@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// Attach to UIManager
 public class UIManagerX : MonoBehaviour
 {
     public Text scoreText;
@@ -37,7 +38,8 @@ public class UIManagerX : MonoBehaviour
         if (playerControllerScript.gameOver && !won)
             scoreText.text = "You Lose.\nPress (R) to Try Again!";
 
-        if (score >= 5)
+        // If player collects 15 money, they win!
+        if (score >= 15)
         {
             playerControllerScript.gameOver = true;
             won = true;

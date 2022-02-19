@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach to background
 public class RepeatBackgroundX : MonoBehaviour
 {
     private Vector3 startPos;

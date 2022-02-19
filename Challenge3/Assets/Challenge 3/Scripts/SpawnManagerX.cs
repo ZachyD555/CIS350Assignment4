@@ -7,12 +7,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach to spawnManager
 public class SpawnManagerX : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-    private float spawnDelay = 2.0f;
-    private float spawnInterval = 1.5f;
-
+    private float spawnDelay = 2.0f, spawnInterval = 1.5f;
     private PlayerControllerX playerControllerScript;
 
     // Start is called before the first frame update

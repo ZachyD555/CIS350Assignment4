@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach to triggerZone. In prefab 
 public class AddOneScoreX : MonoBehaviour
 {
     private UIManagerX uIManager;

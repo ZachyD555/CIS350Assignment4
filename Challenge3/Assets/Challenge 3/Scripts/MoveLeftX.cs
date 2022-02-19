@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Attach to background, money, and bombs
 public class MoveLeftX : MonoBehaviour
 {
     public float speed;
@@ -24,9 +25,7 @@ public class MoveLeftX : MonoBehaviour
     {
         // If game is not over, move to the left
         if (!playerControllerScript.gameOver)
-        {
             transform.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
-        }
 
         // If object goes off screen that is NOT the background, destroy it
         if (transform.position.x < leftBound && !gameObject.CompareTag("Background"))
